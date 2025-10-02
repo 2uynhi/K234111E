@@ -1,0 +1,105 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Lê Hữu Quỳnh Nhi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 600px;
+      margin: 20px auto;
+      border: 2px solid blue;
+      padding: 15px;
+      background-color: aliceblue;
+    }
+
+    h2 {
+      color: red;
+      margin-bottom: 5px;
+    }
+
+    hr {
+      border: 1px solid #000;
+    }
+
+    .section {
+      margin-top: 15px;
+    }
+
+    label {
+      margin-right: 15px;
+    }
+
+    input[type="text"], input[type="date"] {
+      padding: 4px;
+      margin: 5px 0;
+    }
+
+    textarea {
+      width: 98%;
+      height: 40px;
+    }
+
+    .buttons {
+      margin-top: 15px;
+    }
+
+    .buttons img {
+      width: 80px;  
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Online Classifieds Search Form</h2>
+  <hr>
+
+  <form>
+    <div class="section">
+      <b>1) Search for a classified in the following sections:</b><br>
+      <input type="radio" name="section"> Employment
+      <input type="radio" name="section"> Personal
+      <input type="radio" name="section"> For Sale
+      <input type="radio" name="section"> Miscellaneous
+      <input type="radio" name="section"> Housing
+      <input type="radio" name="section"> All of the above
+    </div>
+
+    <div class="section">
+      <b>2) Search the following publications:</b><br>
+      <input type="checkbox"> Midwest times
+      <input type="checkbox"> Modern News
+      <input type="checkbox"> Employment Today <br>
+      <input type="checkbox" checked> Great Lakes Classifieds
+      <input type="checkbox"> Middleton Daily
+      <input type="checkbox"> Cashtown Daily News
+    </div>
+
+    <div class="section">
+      <b>3) From to</b> 
+      <input type="date"> to <input type="date">
+    </div>
+
+    <div class="section">
+      <b>4) Enter a few keywords to describe the classified.</b><br>
+      <input type="text" style="width:98%">
+    </div>
+
+    <div class="section">
+      <b>5) Click one of the options below:</b><br><br>
+      <div class="buttons">
+        <img src="images/Search.gif" alt="Search">
+        <img src="images/Help.gif" alt="Help">
+        <img src="images/Cancel.gif" alt="Cancel">
+      </div>
+    </div>
+
+  </form>
+</div>
+
+</body>
+</html>
