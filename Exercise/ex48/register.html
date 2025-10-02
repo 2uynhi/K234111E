@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jackson Electronics Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #cce0ff;
+    }
+
+    .container {
+      width: 600px;
+      margin: 20px auto;
+      border: 2px solid #3333ff;
+      padding: 15px;
+      background-color: #99ccff;
+    }
+
+    .header {
+      text-align: center;
+      background-color: #00cccc;
+      padding: 10px;
+      font-size: 22px;
+      font-weight: bold;
+      border: 2px solid #000;
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    form {
+      margin-top: 10px;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    td {
+      padding: 4px;
+      vertical-align: top;
+    }
+
+    input[type="text"], input[type="date"], select, textarea {
+      width: 90%;
+      padding: 3px;
+      border: 1px solid #666;
+    }
+
+    textarea {
+      height: 80px;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .buttons input {
+      padding: 5px 15px;
+      margin: 5px;
+      border: 1px solid #333;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    Jackson <br> Electronics
+  </div>
+
+  <h2>Registration Form</h2>
+  <p style="text-align:center;">Register your Jackson Electronics product here</p>
+
+  <form>
+    <table>
+      <tr>
+        <td>First Name:</td>
+        <td><input type="text"></td>
+        <td>Last Name:</td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Address #1:</td>
+        <td colspan="3"><input type="text" style="width:98%"></td>
+      </tr>
+      <tr>
+        <td>Address #2:</td>
+        <td colspan="3"><input type="text" style="width:98%"></td>
+      </tr>
+      <tr>
+        <td>City:</td>
+        <td><input type="text"></td>
+        <td>State:</td>
+        <td><input type="text" style="width:40%"> Zip: 
+            <input type="text" style="width:40%"></td>
+      </tr>
+      <tr>
+        <td>Country:</td>
+        <td colspan="3"><input type="text" value="United States"></td>
+      </tr>
+      <tr>
+        <td>Product:</td>
+        <td colspan="3">
+          <select>
+            <option>ScanMaster</option>
+            <option>Printer</option>
+            <option>Monitor</option>
+            <option>Laptop</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Date Purchased:</td>
+        <td><input type="date"></td>
+        <td>Serial #:</td>
+        <td><input type="text"></td>
+      </tr>
+      <tr>
+        <td>Used for:</td>
+        <td colspan="3">
+          <input type="radio" name="usefor"> Home
+          <input type="radio" name="usefor"> Business
+          <input type="radio" name="usefor"> Government
+          <input type="radio" name="usefor"> Educational Institution
+          <input type="radio" name="usefor"> Other
+        </td>
+      </tr>
+      <tr>
+        <td>System (check all that apply):</td>
+        <td colspan="3">
+          <input type="checkbox"> Windows
+          <input type="checkbox"> Macintosh
+          <input type="checkbox"> UNIX
+          <input type="checkbox"> Other
+        </td>
+      </tr>
+      <tr>
+        <td>Comments?:</td>
+        <td colspan="3"><textarea></textarea></td>
+      </tr>
+    </table>
+
+    <div class="buttons">
+      <input type="button" value="Click to register">
+      <input type="reset" value="Click to cancel">
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
