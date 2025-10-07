@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Newborn Registration - St. Mary's of Northland Pines</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #007b7b; /* teal background */
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 700px;
+      margin: 30px auto;
+      background-color: #007b7b;
+      padding: 20px;
+      border: 2px solid #0000ff; /* blue border */
+    }
+    .header {
+      text-align: center;
+      background-color: #007b7b;
+      margin-bottom: 20px;
+    }
+    .header img {
+      display: block;
+      margin: 0 auto;
+      width: 400px;
+      height: auto;
+    }
+    h2 {
+      text-align: center;
+      color: white;
+      border-bottom: 1px solid white;
+      padding-bottom: 5px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: inline-block;
+      width: 180px;
+      margin-top: 8px;
+    }
+    input[type="text"], select {
+      padding: 4px;
+      margin-top: 5px;
+    }
+    input[type="text"] {
+      width: 200px;
+    }
+    .short {
+      width: 80px;
+    }
+    .name-pair {
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .buttons {
+      margin-top: 20px;
+      text-align: left;
+    }
+    input[type="button"], input[type="reset"] {
+      padding: 6px 12px;
+      margin-right: 10px;
+      border: 1px solid #444;
+      background-color: #e3e3e3;
+      color: black;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    input[type="button"]:hover, input[type="reset"]:hover {
+      background-color: #cce5ff;
+    }
+    select[multiple] {
+      width: 250px;
+      height: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <img src="Logo.gif" alt="St. Mary's of Northland Pines Logo">
+    </div>
+
+    <h2>Newborn Registration</h2>
+
+    <form id="registrationForm">
+      <p>Date: <input type="text" placeholder="mm/dd/yy"></p>
+
+      <p>1) Infant's first name:
+        <input type="text" name="infantFirst">
+        Last:
+        <input type="text" name="infantLast">
+      </p>
+
+      <p>2) Medical Record #:
+        <input type="text" name="recordNumber">
+      </p>
+
+      <p>3) Date of birth:
+        <input type="text" placeholder="mm/dd/yy" name="dob">
+      </p>
+
+      <p>4) Birth weight:
+        <input type="text" class="short" name="weight">
+      </p>
+
+      <p>5) APGAR score:
+        <input type="text" class="short" name="apgar">
+      </p>
+
+      <p>6) Mother's first name:
+        <input type="text" name="motherFirst">
+        Last:
+        <input type="text" name="motherLast">
+      </p>
+
+      <p>7) Father's first name:
+        <input type="text" name="fatherFirst">
+        Last:
+        <input type="text" name="fatherLast">
+      </p>
+
+      <p>8) Physician (check all that apply):<br>
+        <select multiple>
+          <option>Dr. Warren Albert</option>
+          <option>Dr. Maria Alvarez</option>
+          <option>Dr. Karen Brinkman</option>
+          <option>Dr. Micheal Kerry</option>
+        </select>
+      </p>
+
+      <div class="buttons">
+        <input type="button" value="Register" onclick="submitForm()">
+        <input type="reset" value="Cancel">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function submitForm() {
+      alert("Newborn registration has been submitted!");
+    }
+  </script>
+
+</body>
+</html>
