@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Lê Hữu Quỳnh Nhi</title>
+</head>
+<script>
+    function change_color(v)
+    {
+        document.getElementById("div_color").style=
+            "width: 100%;height: 50px;background-color:"+v
+    }
+    function change_image(value)
+    {
+        avatar=document.getElementById("avatar")
+        avatar.setAttribute("src", "image/"+value)
+    }
+</script>
+<body>
+    <form name="frm_color">
+        <select name="combo_color" onchange="change_color(this.value)">
+            <option value="blue"> Xanh</option>
+            <option value="green"> Xanh lá</option>
+            <option value="yellow"> vàng</option>
+        </select>
+        <div id="div_color" style="width: 100%;height: 50px;background-color: pink;">
+
+        </div>
+    </form>
+    <form name="frm_image"> 
+        <select name="combo_image" onchange="change_image(this.value)">
+            <option value="LVB1.jpg"> Ông 1</option>
+            <option value="LVB2.jpg"> Ông 2</option>
+            <option value="LVB3.jpg"> Ông 3</option>
+            <option value="LVB4.jpg"> Ông 4</option>
+        </select>
+        <br/>
+        <img id="avatar" src="../learn_form/image/LVB1.jpg"/>
+
+    </form>
+</body>
+</html>
