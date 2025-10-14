@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Lê Hữu Quỳnh Nhi</title>
+        <script type="text/javascript">
+            function process_save_customer()
+            {
+              // step 1: get customer tbody html element:
+              customer_tbody=document.getElementById("customer_tbody");
+              // empty existing data
+              customer_tbody.innerHTML="";
+              //step 2: create tr tag:
+              row=document.createElement("tr");
+              //step2.1: push row intro customer_tbody
+                customer_tbody.appendChild(row);
+              // step 2.2: create td (customer id)
+              td_item=document.createElement("td");
+              td_id.innerHTML=my_form.customer_id.value;
+              // step 2.3: push td_id into row
+                row.appendChild(td_id);  
+                td_name=document.createElement("td");
+                row.appendChild(td_name);
+                td_type=document.createElement("td");
+                row.appendChild(td_type);
+                
+            }
+        </script>
+    </head>
+    <body>
+        <form name="my_form">
+            <fieldset>
+                <legend>Customer Information:</legend>
+                <table>
+                    <tr>
+                        <td>
+                            Id:
+                        </td>
+                        <td>
+                            <input type="text" name="customer_id" id="customer_id"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                           Name:
+                        </td>
+                        <td>
+                            <input type="text" name="customer_name" id="customer_name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="radio" value="VIP" name="customer_type" id="customer_type_VIP"/>
+                            <label for="customer_type_VIP">VIP</label>
+                            <input type="radio" value="Normal" name="customer_type" id="customer_type_Normal"/>
+                            <label for="customer_type_Normal">Normal</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <button type ="button" >Save Customer</button>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+        <fieldset>
+            <legend>List of Customer:</legend>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody id="customer_tbody"></tbody>
+        </fieldset>    
+    </body>
+</html>

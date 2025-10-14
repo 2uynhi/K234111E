@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>
+            Lê Hữu Quỳnh Nhi
+        </title>
+        <script type="text/javascript">
+            var person = {
+                Id: "P01",
+                FirstName: "Nhi",
+                LastName: "Le",
+                Birthday: new Date(2004, 10, 8),
+                FullName: function() {
+                    return this.FirstName + " " + this.LastName;
+                },
+                GetAge: function()
+                {
+                    return new Date().getFullYear() - this.Birthday.getFullYear();
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td>ID:</td>
+                <td id="td_id"></td>
+            </tr>
+            <tr>
+                <td>FirstName:</td>
+                <td id="td_firstname"></td>
+            </tr>
+            <tr>
+                <td>LastName:</td>
+                <td id="td_lastname"></td>
+            </tr>
+            <tr>
+                <td>FullName:</td>
+                <td id="td_fullname"></td>
+            </tr>
+            <tr>
+                <td>Birthday:</td>
+                <td id="td_birthday"></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td id="td_age"></td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            td_id.innerText = person.Id;
+            td_firstname.innerText = person.FirstName;
+            td_lastname.innerText = person["LastName"];
+            td_fullname.innerText = person.FullName();
+            td_birthday.innerText = person.Birthday.toDateString();
+            td_age.innerText = person.GetAge();
+            img_photo.src="../images/"+person.Photo
+        </script>
+    </body>
+</html>

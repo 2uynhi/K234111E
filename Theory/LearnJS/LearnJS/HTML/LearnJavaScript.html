@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Lê Hữu Quỳnh Nhi</title>  
+        <script src="../JS/main.js"></script>
+        <script type="text/javascript">
+            function call_fib()
+            {
+                var fib = find_fib(myform.input_n.value);
+                var td_result = document.getElementById("td_result");
+                td_result.innerText = fib;
+                var div_list_fibo = document.getElementById("div_list_fibo");
+                invoke_list_fib(myform.input_n.value, div_list_fibo);
+            }
+            function set_digital_clock()
+            {
+                t= new Date();
+                td_digital_clock.innerText = t.toLocaleTimeString();
+            } 
+        </script>   
+    </head>
+    <body>
+        <form name ="myform">
+            <fieldset>
+                <legend>Fibonacci number</legend>
+                <table>
+                    <tr>
+                        <td>N:</td>
+                        <td>
+                            <input type="Number" name="input_n" id="input_n"/> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <button type="button" onclick="call_fib()">Find Fibonacci</button>
+                            <button type="button" onclick="invoke_fib(myform.input_n,value,td_result)">Find Fibonacci 2</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Result Fib:</td>
+                        <td id="td_result"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            List Fibonacci
+                        </td>
+                        <td>
+                            <div id="div_list_fibo" style="height: 100px; width: 200px; background-color: aliceblue; overflow-y:scroll">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" id="td_digital_clock">My clock:</td>
+                    </tr>
+                    
+                </table>
+            </fieldset>
+        </form>
+        <h1>
+            Nội dung trang
+        </h1>
+        <div style="background-color: beige; height: 100px" onclick="javascript: this. style= 'height:100px; background-color: red'">
+        </div>
+        <script type="text/javascript">
+            //set_digital_clock
+            // tự chạy giây
+            setInterval(set_digital_clock, 1000);
+        </script>
+
+    </body>
+</html>
