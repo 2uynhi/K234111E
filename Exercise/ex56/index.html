@@ -1,0 +1,70 @@
+<html>
+<head>
+    <title>String Processing</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 1px solid black;
+            margin-top: 20px;
+            width: 500px;
+        }
+        th {
+            background-color: lavender;
+            padding: 10px;
+            text-align: center;
+        }
+        td {
+            padding: 5px;
+            text-align: center;
+        }
+        textarea {
+            width: 90%;
+            height: 80px;
+        }
+        button {
+            width: 95%;
+            margin: 3px;
+            padding: 5px;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <table align="center">
+        <tr>
+            <th colspan="2">Using String Processing functions</th>
+        </tr>
+        <tr>
+            <td><b>Input Data:</b></td>
+            <td><b>Result:</b></td>
+        </tr>
+        <tr>
+            <td><textarea id="inputData"></textarea></td>
+            <td><textarea id="result"></textarea></td>
+        </tr>
+        <tr>
+            <td><button onclick="enterData()">Enter Data</button></td>
+            <td><button onclick="countUppercase()">Count the number of uppercase characters</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="toUpper()">Uppercase display</button></td>
+            <td><button onclick="oneWordPerLine()">Output one word per line</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="toLower()">lowercase display</button></td>
+            <td><button onclick="wordCount()">Word count</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="countLowercase()">Count the number of lowercase characters</button></td>
+            <td><button onclick="printVowelsConsonants()">print vowels, consonants</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="https://www.w3schools.com/js/js_string_methods.asp" target="_blank">W3C's String Processing Website</a></td>
+        </tr>
+    </table>
+
+    <script src="main.js"></script>
+</body>
+</html>
