@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Lê Hữu Quỳnh Nhi</title>
+</head>
+<body>
+    <h2>Exercise 54: Math Function</h2>
+    <table border="1" cellpadding="5">
+        <tr>
+            <td>a:</td>
+            <td><input type="text" id="a" value="30"></td>
+        </tr>
+        <tr>
+            <td>b:</td>
+            <td><input type="text" id="b" value="45"></td>
+        </tr>
+        <tr>
+            <td>c:</td>
+            <td><input type="text" id="c" value="90"></td>
+        </tr>
+        <tr>
+            <td>Result:</td>
+            <td><input type="text" id="result" readonly></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button onclick="findMax()">MAX</button>
+                <button onclick="findMin()">MIN</button>
+                <button onclick="sinA()">sin(a)</button>
+                <button onclick="cosA()">cos(a)</button>
+                <button onclick="power()">a^b</button>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        function findMax() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            document.getElementById("result").value = Math.max(a, b, c);
+        }
+
+        function findMin() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            document.getElementById("result").value = Math.min(a, b, c);
+        }
+
+        function sinA() {
+            var a = parseFloat(document.getElementById("a").value);
+            document.getElementById("result").value = Math.sin(a * Math.PI / 180);
+        }
+
+        function cosA() {
+            var a = parseFloat(document.getElementById("a").value);
+            document.getElementById("result").value = Math.cos(a * Math.PI / 180);
+        }
+
+        function power() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            document.getElementById("result").value = Math.pow(a, b);
+        }
+    </script>
+</body>
+</html>

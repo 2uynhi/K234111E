@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Lê Hữu Quỳnh Nhi</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th {
+            background-color: lavenderblush;
+            padding: 5px;
+        }
+        td {
+            padding: 5px;
+        }
+        input {
+            width: 150px;
+            padding: 3px;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 3px;
+            border-radius: 5px;
+        }
+        #result {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>The Quadratic Equation</h2>
+    <table border="1">
+        <tr>
+            <th colspan="2">The quadratic equation</th>
+        </tr>
+        <tr>
+            <td>a:</td>
+            <td><input type="text" id="a"></td>
+        </tr>
+        <tr>
+            <td>b:</td>
+            <td><input type="text" id="b"></td>
+        </tr>
+        <tr>
+            <td>c:</td>
+            <td><input type="text" id="c"></td>
+        </tr>
+        <tr>
+            <td>Result:</td>
+            <td><input type="text" id="result" readonly></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button onclick="solve()">Find solution</button>
+                <button onclick="clearForm()">Clear</button>
+            </td>
+        </tr>
+    </table>
+
+    <script src="main.js"></script>
+</body>
+</html>
