@@ -1,0 +1,27 @@
+
+<h3 class="text-center text-white bg-dark p-3">
+  Bitcoin Price Index (Real-time)
+</h3>
+
+<p><b>Updated:</b> {{time?.updated}}</p>
+
+<table class="table table-bordered text-center">
+  <thead class="table-dark">
+    <tr>
+      <th>Currency</th>
+      <th>Code</th>
+      <th>Rate</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let item of bpi | keyvalue">
+      <td>{{item.key}}</td>
+      <td>{{item.value.code}}</td>
+      <td>{{item.value.rate}}</td>
+      <td>{{item.value.description}}</td>
+    </tr>
+  </tbody>
+</table>
+
