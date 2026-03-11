@@ -1,0 +1,121 @@
+<div class="ex58-container">
+  <div class="nav-toggle">
+    <button (click)="viewMode = 'client'" [class.active]="viewMode === 'client'">Client View</button>
+    <button (click)="viewMode = 'admin'" [class.active]="viewMode === 'admin'">Admin View</button>
+  </div>
+
+  <!-- CLIENT VIEW -->
+  <div *ngIf="viewMode === 'client'" class="client-view">
+    <h2>Fashion Client Portal</h2>
+    
+    <div class="top-bar">
+      <div class="filter-section">
+        <label for="styleFilter">Filter by Style:</label>
+        <select id="styleFilter" [(ngModel)]="selectedStyle" (change)="filterByStyle()">
+          <option value="">All Styles</option>
+          <option *ngFor="let style of styles" [value]="style">{{ style }}</option>
+        </select>
+      </div>
+      <div class="cart-section">
+        <span>Cart Items: {{ cart.length }}</span>
+      </div>
+    </div>
+
+    <!-- Fashion Grid -->
+    <div class="fashion-grid" *ngIf="!selectedFashionClient">
+      <div class="fashion-card" *ngFor="let f of filteredFashions">
+        <img [src]="f.thumbnail" [alt]="f.title" class="avatar" (click)="viewFashionClient(f)">
+        <div class="card-body">
+          <h3 (click)="viewFashionClient(f)">{{ f.title }}</h3>
+          <p class="style-badge">{{ f.style }}</p>
+          <button (click)="addToCart(f)" class="btn-addToCart">Add to Cart</button>
+        </div>
+      </div>
+      <p *ngIf="filteredFashions.length === 0">No fashions found for this style.</p>
+    </div>
+
+    <!-- Detail View -->
+    <div *ngIf="selectedFashionClient" class="client-detail-view">
+      <button (click)="closeFashionClient()" class="btn-back">Back to List</button>
+      <div class="detail-content">
+        <img [src]="selectedFashionClient.thumbnail" [alt]="selectedFashionClient.title">
+        <div class="detail-texts">
+          <h2>{{ selectedFashionClient.title }}</h2>
+          <span class="style-badge">{{ selectedFashionClient.style }}</span>
+          <!-- Render WYSIWYG HTML securely using innerHTML -->
+          <div class="fashion-notes" [innerHTML]="selectedFashionClient.details"></div>
+          <button (click)="addToCart(selectedFashionClient)" class="btn-addToCart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN VIEW -->
+  <div *ngIf="viewMode === 'admin'" class="admin-view">
+    <h2>System Administration - Fashion List</h2>
+    
+    <div *ngIf="!showEditMode">
+      <button class="btn-add" (click)="openAddFashion()">+ Add a new Fashion</button>
+      
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>Thumbnail</th>
+            <th>Title</th>
+            <th>Style</th>
+            <th>Creation Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let f of fashions">
+            <td><img [src]="f.thumbnail" class="table-thumb" alt="thumb"></td>
+            <td>{{ f.title }}</td>
+            <td>{{ f.style }}</td>
+            <td>{{ f.created_at | date:'shortDate' }}</td>
+            <td>
+              <button class="btn-edit" (click)="editFashion(f)">Edit</button>
+              <button class="btn-delete" (click)="deleteFashion(f._id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Edit / Add Screen -->
+    <div *ngIf="showEditMode" class="admin-edit-form">
+      <h3>{{ currentFashion._id ? 'Edit Fashion' : 'Add New Fashion' }}</h3>
+      
+      <div class="form-group">
+        <label>Title:</label>
+        <input type="text" [(ngModel)]="currentFashion.title" class="form-control">
+      </div>
+      
+      <div class="form-group">
+        <label>Style:</label>
+        <select [(ngModel)]="currentFashion.style" class="form-control">
+          <option *ngFor="let style of styles" [value]="style">{{ style }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Thumbnail URL:</label>
+        <input type="text" [(ngModel)]="currentFashion.thumbnail" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Details (WYSIWYG):</label>
+        <quill-editor [(ngModel)]="currentFashion.details" 
+                      placeholder="Enter Details Area"
+                      [style]="{height: '200px'}">
+        </quill-editor>
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-save" (click)="saveFashion()">Save</button>
+        <button class="btn-cancel" (click)="cancelEdit()">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+</div>
